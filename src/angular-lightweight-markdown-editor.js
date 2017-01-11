@@ -132,23 +132,13 @@
             return helpers.startLinesWith(model, selection.start, selection.end, "1. ");
         },
         heading: function(model, selection) {
-            if (model[selection.start] == "#") {
-                return helpers.startLinesWith(model, selection.start, selection.end, "#");
-            } else if (model[selection.start] == "#" && model[selection.start + 1] == "#" && model[selection.start + 2] == "#") {
-                model[selection.start] = "";
-                model[selection.start + 1] = "";
-                model[selection.start + 2] = "";
-                model[selection.start + 3] = "";
-            }
-            else {
-                return helpers.startLinesWith(model, selection.start, selection.end, "# ");
-            }
+            return helpers.startLinesWith(model, selection.start, selection.end, "#");
         },
         heading2: function(model, selection) {
-            return helpers.startLinesWith(model, selection.start, selection.end, "## ");
+            return helpers.startLinesWith(model, selection.start, selection.end, "##");
         },
         heading3: function(model, selection) {
-            return helpers.startLinesWith(model, selection.start, selection.end, "### ");
+            return helpers.startLinesWith(model, selection.start, selection.end, "###");
         },
         strikethrough: function(model, selection) {
             if (selection.length == 0) {
