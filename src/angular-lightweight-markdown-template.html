@@ -1,10 +1,10 @@
 <div class="markdown-editor">
     <ul class="markdown-editor__actions">
-	<select class="heading-selector" ng-model="selected" ng-change="markdownEditorCtrl.action(markdownEditorCtrl.selected)">
+	<select class="heading-selector">
 	    <option value="" disabled="disabled" selected="selected">Style</option>
-	    <option value="Heading">Heading</option>
-	    <option value="Heading2">Heading2</option>
-  	    <option value="Heading3">Heading3</option>
+	    <option ng-click="markdownEditorCtrl.action('heading')">Heading</option>
+	    <option ng-click="markdownEditorCtrl.action('heading2')">Heading2</option>
+  	    <option ng-click="markdownEditorCtrl.action('heading3')">Heading3</option>
 	</select>
         <li
             ng-repeat="control in markdownEditorCtrl.options.controls track by $index"

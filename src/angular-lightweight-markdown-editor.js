@@ -71,6 +71,10 @@
     function markdownController($sce) {
         this.preview = false;
 
+        $('select').change(function(){
+            $('select').prop('selectedIndex',0);            
+        });
+
 		if(typeof this.showPreview !== "undefined") {
         	this.preview = this.showPreview;
         }
@@ -100,7 +104,6 @@
 
         this.options = angular.extend({}, defaultOptions, this.options);
         this.icons = icons;
-	this.selected = "";
     }
 
     function getSelectionInfo() {
