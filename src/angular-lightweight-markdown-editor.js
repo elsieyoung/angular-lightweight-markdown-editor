@@ -100,6 +100,7 @@
 
         this.options = angular.extend({}, defaultOptions, this.options);
         this.icons = icons;
+	this.selected = "";
     }
 
     function getSelectionInfo() {
