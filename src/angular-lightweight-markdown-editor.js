@@ -100,10 +100,6 @@
 
         this.options = angular.extend({}, defaultOptions, this.options);
         this.icons = icons;
-
-        $('select').change(function(){
-            $('select').prop('selectedIndex',0);            
-        });
     }
 
     function getSelectionInfo() {
@@ -136,7 +132,17 @@
             return helpers.startLinesWith(model, selection.start, selection.end, "1. ");
         },
         heading: function(model, selection) {
-            return helpers.startLinesWith(model, selection.start, selection.end, "# ");
+            if (model[selection.start] == "#") {
+                return helpers.startLinesWith(model, selection.start, selection.end, "#");
+            } else if (model[selection.start] == "#" && model[selection.start + 1] == "#" && model[selection.start + 2] == "#") {
+                model[selection.start] = "";
+                model[selection.start + 1] = "";
+                model[selection.start + 2] = "";
+                model[selection.start + 3] = "";
+            }
+            else {
+                return helpers.startLinesWith(model, selection.start, selection.end, "# ");
+            }
         },
         heading2: function(model, selection) {
             return helpers.startLinesWith(model, selection.start, selection.end, "## ");
