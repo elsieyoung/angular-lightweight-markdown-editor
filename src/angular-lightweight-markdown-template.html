@@ -1,6 +1,6 @@
 <div class="markdown-editor">
     <ul class="markdown-editor__actions">
-	<select class="heading-selector" ng-model="headingSelected" ng-change="markdownEditorCtrl.action(headingSelected)">
+	<select class="heading-selector" ng-model="markdownEditorCtrl.headingSelected" ng-change="markdownEditorCtrl.action(markdownEditorCtrl.headingSelected)">
 	    <option value="" disabled="disabled" selected="selected">Style</option>
 	    <option value="heading">Heading</option>
 	    <option value="heading2">Heading2</option>
