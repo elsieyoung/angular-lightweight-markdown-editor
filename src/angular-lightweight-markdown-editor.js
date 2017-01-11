@@ -132,20 +132,20 @@
             return helpers.startLinesWith(model, selection.start, selection.end, "1. ");
         },
         heading: function(model, selection) {
-            return helpers.startLinesWith(model, selection.start, selection.end, "#");
+            return helpers.startLinesWith(model, selection.start, selection.end, "# ");
         },
         heading2: function(model, selection) {
-            return helpers.startLinesWith(model, selection.start, selection.end, "##");
+            return helpers.startLinesWith(model, selection.start, selection.end, "## ");
         },
         heading3: function(model, selection) {
-            return helpers.startLinesWith(model, selection.start, selection.end, "###");
+            return helpers.startLinesWith(model, selection.start, selection.end, "### ");
         },
         strikethrough: function(model, selection) {
             if (selection.length == 0) {
                 return model;
             }
 
-            return helpers.surround(model, selection.start, selection.end - selection.start, "--", "--");
+            return helpers.surround(model, selection.start, selection.end - selection.start, "~~", "~~");
         },
         indent: function(model, selection) {
             return helpers.startLinesWith(model, selection.start, selection.end, "\t");
